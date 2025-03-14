@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { shadesOfPurple } from "@clerk/themes";
-import { ThemeProvider } from "@/components/ui/theme-provider";
-import Navbar from "@/components/ui/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/navbar";
+import Sidebar from "@/components/sidenav";
 import { currentUser } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
@@ -38,7 +39,7 @@ export default async function RootLayout({
                   <div className="max-w-7xl mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                       <div className="hidden lg:block lg:col-span-3">
-                        sidebar
+                        <Sidebar />
                       </div>
                       <div className="lg:col-span-9">{children}</div>
                     </div>
