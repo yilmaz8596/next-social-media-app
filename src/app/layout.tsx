@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidenav";
 import { currentUser } from "@clerk/nextjs/server";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -50,6 +51,7 @@ export default async function RootLayout({
               <div className="lg:col-span-9">{children}</div>
             )}
           </ThemeProvider>
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
