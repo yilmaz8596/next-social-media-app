@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-async function ProfilePageServer({ params }: { params: { username: string } }) {
+async function ProfilePageServer({ params }: any) {
   const user = await getProfileByUsername(params.username);
 
   if (!user) notFound();
