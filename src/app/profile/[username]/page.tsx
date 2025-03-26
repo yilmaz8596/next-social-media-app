@@ -12,7 +12,7 @@ export async function generateMetadata({
 }: {
   params: { username: string };
 }) {
-  const user = await getProfileByUsername(await params.username);
+  const user = await getProfileByUsername(params.username);
   if (!user) return;
 
   return {
